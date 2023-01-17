@@ -1,17 +1,21 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { clear } from "../feautres/cart/cartSlice";
-
+import { useNavigate } from "react-router-dom";
 export default function Cart() {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    navigate(`/`);
+  };
   const { cartItems, total, amount } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
+  console.log(`amount ${amount} , total ${total} `);
   if (amount < 1) {
     return (
       <div className="empty-container">
         <h2 id="empty-h2">Shopping Cart</h2>
         <h4 id="empty-h4">is currently empty</h4>
-        <button onClick={() => {}} id="empty-button">
+        <button onClick={routeChange} id="empty-button">
           Go Shopping
         </button>
         <hr className="hr" />
@@ -34,9 +38,9 @@ export default function Cart() {
           <div key={item.key} id="item-cart-container">
             <div id="sanwich-in-cart-container">
               <img src={item.img} id="img-cart" />
-              <h3>{item.name}</h3>
+              <h5 id="sandwich-h5">{item.name}</h5>
             </div>
-            <h3>{item.quantity}</h3>
+            <h4 id="quantity-num">{item.quantity}</h4>
             <h4>EGP {item.price}</h4>
             <h4>EGP {item.price * item.quantity}</h4>
           </div>
@@ -44,12 +48,15 @@ export default function Cart() {
       })}
       <hr className="hr" />
       <div className="footer-container">
-        <button onClick={() => dispatch(clear())}>Clear Cart</button>
-        <div>
+        <button onClick={() => dispatch(clear())} className="clear">
+          Clear Cart
+        </button>
+        <div id="right-footer">
           <h4>
-            Total({amount} items) : <span>EGP {total}</span>
+            Total ( {amount} items ) : <span>EGP {total}</span>
           </h4>
-          <button>proceed</button>
+          <p id="taxes-included">Taxes are icluded</p>
+          <button className="proceed">proceed</button>
         </div>
       </div>
     </div>

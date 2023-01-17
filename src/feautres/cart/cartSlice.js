@@ -10,7 +10,6 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      debugger;
       const itemInCart = state.cartItems.find(
         (item) => item.id === action.payload.id
       );
@@ -45,14 +44,17 @@ const cartSlice = createSlice({
         state.amount = state.amount - 1;
       }
     },
-    total: (state) => {
-      state.cartItems.forEach(
-        (item) => (state.total += item.amount * item.price)
-      );
+    calculateTotal: (state) => {
+      let total = 0;
+      state.cartItems.forEach((item) => {
+        total += item.quantity * item.price;
+      });
+      state.total = total;
+      console.log(`total ${state.total}`);
     },
   },
 });
-export const { addToCart, increment, clear, decrement, total } =
+export const { addToCart, increment, clear, decrement, calculateTotal } =
   cartSlice.actions;
 
 export default cartSlice.reducer;

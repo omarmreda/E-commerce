@@ -4,7 +4,7 @@ import Item from "./Item";
 export default function Juices({ data }) {
   return (
     <div>
-      <h2>Juices</h2>
+      <hr className="hr" />
       <div className="sandwichs-container">
         {data.map((item) => {
           return (

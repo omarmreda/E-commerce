@@ -3,9 +3,13 @@ import React from "react";
 export default function Search() {
   return (
     <div id="search-div">
-      <input type="text" placeholder="Search" id="search" />
+      <input
+        type="text"
+        placeholder="Search for Sandwich or Juice..."
+        id="search"
+      />
 
-      <select>
+      <select className="select-icon">
         <option value="none" disabled>
           Category
         </option>

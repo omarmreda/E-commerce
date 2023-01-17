@@ -15,7 +15,7 @@ function Header() {
         <div className="cart-container">
           <FaShoppingCart id="shopping-cart" />
           <div id="text-cart">Cart</div>
-          <sup id="text-number">{amount}</sup>
+          {amount > 0 && <div id="number-cart">{amount}</div>}
         </div>
       </Link>
     </div>

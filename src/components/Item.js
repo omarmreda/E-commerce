@@ -9,7 +9,6 @@ import {
 } from "../feautres/cart/cartSlice";
 
 export default function Item({ id, name, price, img, quantity }) {
-  console.log(`id ${id}`);
   const dispatch = useDispatch();
   const { cartItems, amount, total } = useSelector((store) => store.cart);
   return (

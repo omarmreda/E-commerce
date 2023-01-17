@@ -3,15 +3,17 @@ import Item from "./Item";
 
 export default function Sandwiches({ data }) {
   return (
-    <div className="sandwichs-container">
+    <div className="sandwichs-container" id="sandwich">
       {data.map((item) => {
         return (
-          <Item
-            img={item.cover}
-            name={item.name}
-            price={item.price}
-            id={item.id}
-          />
+          <div>
+            <Item
+              img={item.cover}
+              name={item.name}
+              price={item.price}
+              id={item.id}
+            />
+          </div>
         );
       })}
     </div>

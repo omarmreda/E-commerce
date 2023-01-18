@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { clear } from "../feautres/cart/cartSlice";
+import { clear, clearItem } from "../feautres/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 export default function Cart() {
   let navigate = useNavigate();
@@ -38,7 +38,15 @@ export default function Cart() {
           <div key={item.key} id="item-cart-container">
             <div id="sanwich-in-cart-container">
               <img src={item.img} id="img-cart" />
-              <h5 id="sandwich-h5">{item.name}</h5>
+              <h5 id="sandwich-h5">
+                {item.name}
+                <button
+                  id="remove-item-button"
+                  onClick={() => dispatch(clearItem(item.id))}
+                >
+                  Remove item
+                </button>
+              </h5>
             </div>
             <h4 id="quantity-num">{item.quantity}</h4>
             <h4>EGP {item.price}</h4>

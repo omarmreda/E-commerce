@@ -50,11 +50,21 @@ const cartSlice = createSlice({
         total += item.quantity * item.price;
       });
       state.total = total;
-      console.log(`total ${state.total}`);
+    },
+    clearItem: (state, action) => {
+      state.cartItems = state.cartItems.filter(
+        (item) => item.id !== action.payload.id
+      );
     },
   },
 });
-export const { addToCart, increment, clear, decrement, calculateTotal } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  increment,
+  clear,
+  decrement,
+  calculateTotal,
+  clearItem,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

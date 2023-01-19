@@ -9,7 +9,7 @@ import {
 } from "../feautres/cart/cartSlice";
 import { useState } from "react";
 
-export default function Item({ id, name, price, img, quantity }) {
+export default function Item({ id, name, price, img }) {
   const dispatch = useDispatch();
   const { cartItems, amount, total } = useSelector((store) => store.cart);
   const [ShowPopUp, setShowPopUp] = useState(false);
@@ -22,30 +22,23 @@ export default function Item({ id, name, price, img, quantity }) {
   return (
     <div id="item-container">
       <img src={img} id="img-item" />
-      <FaArrowUp
-        id="up"
-        onClick={() => {
-          dispatch(increment({ id }));
-          handleClick();
-        }}
-      />
-      <FaArrowDown
-        id="down"
-        onClick={() => {
-          dispatch(decrement({ id }));
-        }}
-      />
       <div id="item-name">{name}</div>
       <div id="item-price">EGP {price}</div>
-      <button
-        className="add-button"
-        onClick={() => {
-          dispatch(addToCart({ id, name, img, price }));
-          handleClick();
-        }}
-      >
-        Add to Cart
-      </button>
+      <div id="arrow-button">
+        <FaArrowDown
+          id="down"
+          onClick={() => {
+            dispatch(decrement({ id }));
+          }}
+        />
+        <FaArrowUp
+          id="up"
+          onClick={() => {
+            dispatch(addToCart({ id, name, img, price }));
+            handleClick();
+          }}
+        />
+      </div>
       {ShowPopUp && <div id="pop-up">Item added to the cart</div>}
     </div>
   );

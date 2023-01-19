@@ -12,6 +12,7 @@ export default function Sandwiches({ data }) {
               name={item.name}
               price={item.price}
               id={item.id}
+              quantity={item.quantity}
             />
           </div>
         );

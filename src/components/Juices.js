@@ -13,6 +13,7 @@ export default function Juices({ data }) {
               name={item.name}
               price={item.price}
               id={item.id}
+              quantity={item.quantity}
             />
           );
         })}

@@ -28,16 +28,21 @@ npm start
 Project main page (home page) the user can navigate to two main sections which are sandwiches and juices.
 The user can add items to the cart
 
-default home page:
+#### default home page:
+
 ![homePage](./public/1.jpg)
 
-Updating the cart and pop-up message when adding an item:
+#### Updating the cart and pop-up message when adding an item:
+
 ![UpdatingCart](./public/2.jpg)
 
-Cart Page:
+#### Cart Page:
+
 ![UpdatingCart](./public/3.jpg)
 
-Cart page in Case it is empty
+#### Cart page in Case it is empty
+
+![UpdatingCart](./public/4.jpg)
 
 ### Technologies Used
 

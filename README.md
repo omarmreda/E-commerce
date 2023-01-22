@@ -29,4 +29,4 @@ Project main page (home page) the user can navigate to two main sections which a
 The user can add items to the cart
 
 default home page:
-<img src="../public/1" />
+![homePage](./public/1.jpg)

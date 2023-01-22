@@ -4,9 +4,9 @@ E-commerce project with React.js and Redux toolkit
 
 ## Table of Contents
 
-1- Running the project
-2- Project Interface and Usage
-3- Technologies Used
+1- Running the project  
+2- Project Interface and Usage  
+3- Technologies Used  
 4-CopyWrites
 
 ### Running the project
@@ -30,3 +30,19 @@ The user can add items to the cart
 
 default home page:
 ![homePage](./public/1.jpg)
+
+Updating the cart and pop-up message when adding an item:
+![UpdatingCart](./public/2.jpg)
+
+Cart Page:
+![UpdatingCart](./public/3.jpg)
+
+Cart page in Case it is empty
+
+### Technologies Used
+
+React - Redux Toolkit - CSS - React-router-dom
+
+### Copyrights
+
+&copy; Omar Reda-2023

@@ -17,16 +17,17 @@ code {
   height:65px;
   width:100%;
   background-color: rgb(243, 240, 240);
-  justify-content: space-around;
   align-items: center;
   position: fixed;
   z-index: 999;
   top:0;
+  box-shadow: 0 2px 4px 0 rgba(88, 88, 88, 0.2);
 }
 #logo{
   text-decoration: none;
   color:red;
   font-size: 1.5em;
+  margin-left: 10%;
   font-weight: bold;
 
 }
@@ -39,6 +40,9 @@ code {
   display: flex;
   flex-direction: row;
   cursor: pointer;
+   position: fixed;
+   right:10%;
+   top:20px;
 }
 #text-cart{
   color:rgb(36, 108, 252);
@@ -97,7 +101,7 @@ code {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  column-gap: 50px;
+  column-gap: 6%;
   margin-top: 50px;
   margin-left: 50px;
 }
@@ -105,27 +109,21 @@ code {
   margin:50px;
  
 }
-#nav-div{
-  width:35%;
-  display: flex;
-  flex-direction: column;
-}
 .section-div{
   height:75vh;
   width:100%;
   background-color: rgb(247, 190, 106);
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
 .header-paragraph{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 3em;
+  font-size: 3em ;
   margin-bottom: 100px;
   font-weight: 600;
   color: red;
-  margin-left: 150px;
+  margin-left: 10%;
 }
 #sanwich-span{
   display: flex;
@@ -137,8 +135,8 @@ code {
   margin-top: 5px;
 }
 .burger-img{
-  scale: 55%;
-  margin-left: 200px;
+width:28%;
+margin-left: 20%;
 }
 
 .button-17 {
@@ -364,7 +362,7 @@ margin-left: -80px;
 #nav-icons{
   display: flex;
 list-style-type: none;
-margin-left: 70%;
+margin-left: 5%;
 }
 #nav-icons li{
   color: #3063f1;
@@ -399,25 +397,43 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-}
-.burger-img{
-  width:80%;
-  margin:0;
+height:65vh;
 }
 .header-paragraph{
   margin:0;
-  margin-top: 20%;
   font-size: 2em;
 }
 .button-17{
-  display: none;
+margin-top: 15%;
 }
 #nav-icons{
 display: none;
 }
+.burger-img{
+display: none;
 }
-@media (min-width : 768px)/*small screen rules*/{
-
+}
+@media (min-width : 768px  ) and (max-width: 992px)/*small screen rules*/{
+  .section-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:65vh;
+    }
+    .header-paragraph{
+      margin:0;
+      font-size: 2.5em;
+    }
+    .button-17{
+    margin-top: 15%;
+    }
+    #nav-icons{
+    display: none;
+    }
+    .burger-img{
+    display: none;
+    }
 } 
 @media (min-width : 992px)/*Medium screen rules*/{
 

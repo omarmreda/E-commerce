@@ -9,15 +9,28 @@ import {
 } from "../feautres/cart/cartSlice";
 import { useState } from "react";
 
-export default function Item({ id, name, price, img }) {
+export default function Item({ id, name, price, img, quantity }) {
   const dispatch = useDispatch();
   const { cartItems, amount, total } = useSelector((store) => store.cart);
   const [ShowPopUp, setShowPopUp] = useState(false);
+  const [number, setNumber] = useState(0);
+  const [popup, setPopup] = useState(false);
   const handleClick = () => {
     setShowPopUp(true);
     setTimeout(() => {
       setShowPopUp(false);
-    }, 1000);
+    }, 1200);
+    setNumber((prev) => prev + 1);
+  };
+
+  const handleRemoveClick = () => {
+    if (number > 1) {
+      setNumber((prev) => prev - 1);
+      setPopup(true);
+      setTimeout(() => {
+        setPopup(false);
+      }, 1200);
+    }
   };
   return (
     <div id="item-container">
@@ -29,8 +42,17 @@ export default function Item({ id, name, price, img }) {
           id="down"
           onClick={() => {
             dispatch(decrement({ id }));
+            handleRemoveClick();
           }}
         />
+        {
+          <div
+            id="item-number"
+            style={{ display: number < 1 ? "none" : "block" }}
+          >
+            {number}
+          </div>
+        }
         <FaArrowUp
           id="up"
           onClick={() => {
@@ -40,6 +62,11 @@ export default function Item({ id, name, price, img }) {
         />
       </div>
       {ShowPopUp && <div id="pop-up">Item added to the cart</div>}
+      {popup && (
+        <div id="pop-up" style={{ backgroundColor: "red" }}>
+          Item removed from the cart
+        </div>
+      )}
     </div>
   );
 }

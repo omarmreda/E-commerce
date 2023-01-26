@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import Juices from "./Juices";
 import Sandwiches from "./Sandwiches";
 import SectionOne from "./SectionOne";

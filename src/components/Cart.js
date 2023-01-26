@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { clear, clearItem } from "../feautres/cart/cartSlice";
+import { clear } from "../feautres/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 export default function Cart() {
@@ -42,7 +42,7 @@ export default function Cart() {
           return (
             <div key={item.key} id="item-cart-container">
               <div id="sanwich-in-cart-container">
-                <img src={item.img} id="img-cart" />
+                <img src={item.img} id="img-cart" alt={item.name} />
                 <h5 id="sandwich-h5">{item.name}</h5>
               </div>
               <h4 id="quantity-num">{item.quantity}</h4>

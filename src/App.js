@@ -9,7 +9,6 @@ import NotFound from "./components/NotFound";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { calculateTotal } from "./feautres/cart/cartSlice";
-import Footer from "./components/Footer";
 function App() {
   const { cartItems } = useSelector((store) => store.cart);
   const dispatch = useDispatch();

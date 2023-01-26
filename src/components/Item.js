@@ -1,17 +1,11 @@
 import React from "react";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  addToCart,
-  decrement,
-  increment,
-  total,
-} from "../feautres/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart, decrement } from "../feautres/cart/cartSlice";
 import { useState } from "react";
 
 export default function Item({ id, name, price, img, quantity }) {
   const dispatch = useDispatch();
-  const { cartItems, amount, total } = useSelector((store) => store.cart);
   const [ShowPopUp, setShowPopUp] = useState(false);
   const [number, setNumber] = useState(0);
   const [popup, setPopup] = useState(false);
@@ -24,7 +18,7 @@ export default function Item({ id, name, price, img, quantity }) {
   };
 
   const handleRemoveClick = () => {
-    if (number > 1) {
+    if (number >= 1) {
       setNumber((prev) => prev - 1);
       setPopup(true);
       setTimeout(() => {
@@ -34,7 +28,7 @@ export default function Item({ id, name, price, img, quantity }) {
   };
   return (
     <div id="item-container">
-      <img src={img} id="img-item" />
+      <img src={img} id="img-item" alt={name} />
       <div id="item-name">{name}</div>
       <div id="item-price">EGP {price}</div>
       <div id="arrow-button">
@@ -42,7 +36,7 @@ export default function Item({ id, name, price, img, quantity }) {
           id="down"
           onClick={() => {
             dispatch(decrement({ id }));
-            handleRemoveClick();
+            handleRemoveClick(id);
           }}
         />
         {

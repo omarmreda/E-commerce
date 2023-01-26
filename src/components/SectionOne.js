@@ -14,7 +14,7 @@ export default function SectionOne() {
           <button className="button-17">Order Now</button>
         </Link>
       </p>
-      <img src={img1} className="burger-img" />
+      <img src={img1} className="burger-img" alt="Sandwich" />
     </div>
   );
 }
